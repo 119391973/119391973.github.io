@@ -1,0 +1,208 @@
+<DOCTYPE html!>
+
+<html lang="en">
+<head>
+	<title>Margaret O'Leary</title>
+	<link rel="stylesheet" type + "text/css" href ="calculator.css">
+</head>
+	<body>
+	
+		<div class="header">
+			<h1>Margaret O'Leary</h1>
+		</div>
+		
+		<!--Links and buttons to other pages -->
+		<div class="topnav">
+			<a href = "homepage.html">
+				<button class="button" type = "button">Home </button>
+				</a>
+			<a href = "startbootstrap-resume-gh-pages/index.html">
+				<button class="button" type = "button">Cirriculum Vitae </button>
+				</a>	
+			<a href = "hobbies.html"> 
+				<button class="button" type = "button">Interests </button>
+				</a>
+			<a href = "research.html">
+				<button class="button" type = "button">Strategic Consulting Services</button>
+				</a>
+			<a href = "calculator.html">
+				<button class="button" type = "button">E business Calculator </button>
+				</a>
+			
+		
+		</div>
+     <body align="center">
+         <!-- heading -->
+         <h3>Select Product</h3>
+         
+         <br />
+         
+        
+         
+         <!-- salesforce radio button -->
+            <label for="Hyperautomation">
+                <input type="radio" id="Hyperautomation" name="product" checked onClick="disablebtnProceed()"/>
+                Hyperautomation @ $200
+            </label>
+            
+            <br />
+            <br />
+            <br />
+            
+         <!-- amazon radio button -->    
+            <label for="Multiexperience">
+                <input type="radio" id="Multiexperience" name="product" checked onClick="disablebtnProceed()"/>
+                Multiexperience @ $500
+            </label>
+            
+            <br />
+            <br />
+            <br />
+            
+         <!-- Cloud 9 radio button -->    
+            <label for="Distributed Cloud">
+                <input type="radio" id="Distributed Cloud" name="product" checked onClick="disablebtnProceed()"/>
+                Distributed Cloud  @ $100
+            </label>
+            
+            <br />
+            <br />
+            <br />
+            
+        
+         <!-- subtotal textbox -->    
+            <label for="Subtotal">
+                Sub Total
+                <input type="text" id="Subtotal" name="Subtotal" value="0.00" readonly>
+            </label>
+            
+            <br />
+            <br />
+            <br /> 
+            
+         <!-- discount textbox -->    
+            <label for="Discount">
+                Discount @ 5% 
+                (- discount)
+                <input type="text" id="Discount" name="Discount" value="0.00" readonly>
+            </label>
+            
+            <br /> 
+            <br />
+            <br />
+            
+         <!-- vat textbox -->    
+            <label for="Vat">
+                Vat @ 20%
+                <input type="text" id="Vat" name="Vat" value="0.00" readonly>
+            </label>
+            
+            <br />
+            <br />
+            <br />
+            
+         <!-- total textbox -->    
+            <label for="Total">
+                Total (- discount + vat)
+                <input type="text" id="Total" name="Total" value="0.00" readonly>
+            </label>
+            
+            <br />
+            <br />
+            <br />
+            
+        
+        
+        <!-- button to calculate cost and clear selections -->
+        <button style="font-size:15px;" onClick="calcSub()">Calculate cost</button>
+        
+        <button style="font-size:15px; background-color:black; color:white;">Clear Choice</button></a>
+        
+        <br />
+        <br />
+        
+        
+        
+        <!-- footer -->
+        <div id = "Footer">
+              <p>Copyright 2020 &COPY; All Rights Reserved. Design by Margaret O'Leary.</p>
+          </div>
+        
+        
+    </body>
+
+
+		<script>
+					//creating an if statement 
+			function calcSub(){
+
+				 //declaring our variabes
+				 var argsubtotal;
+				 
+				 //if statement 
+				if(document.getElementById("Hyperautomation").checked) {
+					 argsubtotal = 100; // subtotal if salesforce is checked
+				 }  
+					else if(document.getElementById("Multiexperience").checked) {
+					 argsubtotal = 500; // subtotal if amazon web services is checked
+				 }     
+					else if(document.getElementById("Distributed Cloud").checked) {
+					 argsubtotal = 1000; // subtotal if cloud 9 is checked
+				 }     
+					
+				
+				CalcVatTotal(argsubtotal);
+			}
+
+			//Function to calculate discount, vat and total
+			function CalcVatTotal(parmSubTotal){
+				
+				// declaring our variables
+				var Subtotal = parmSubTotal;
+				var vatAmt;
+				var discountAmt;
+				var TotalPrice;
+				
+				// calculate discount value
+				discountAmt = (parmSubTotal * .05);
+				
+				// calculate vat value
+				vatAmt = (parmSubTotal * .1);
+				
+				// calculate total
+				TotalPrice = (parmSubTotal + vatAmt - discountAmt);
+				
+				//pass all the values
+				display(Subtotal , vatAmt , discountAmt , TotalPrice);
+			}
+
+			//Function to display all the value passed through
+			function display(parm1 , parm2 , parm3 , parm4){
+
+				 // display subtotal
+				 document.getElementById("Subtotal").value = parm1; 
+				 
+				 // display vat
+				 document.getElementById("Vat").value = parm2;
+				 
+				 // display discount 
+				 document.getElementById("Discount").value = parm3; 
+				 
+				 // display total
+				 document.getElementById("Total").value = parm4;
+				 
+				 enablebtnProceed();
+			}
+
+			// function that enables proceed button
+			function enablebtnProceed(){
+				$('#btnProceed').prop('disabled', false);
+			}
+
+			// function that disables proceed button
+			function disablebtnProceed(){
+				$('#btnProceed').prop('disabled', true);
+			}
+</script>
+
+</html>

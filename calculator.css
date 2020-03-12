@@ -1,0 +1,92 @@
+* {
+	box-sizing: border-box
+}
+body {
+		margin: 0;
+
+}
+
+
+/* Header */
+.header {
+		background-image:url("background2.png"); 
+		padding: 50px;
+		text-align: center;
+		font-family: Brush Script MT;
+		font-size: 20px;
+		
+}
+		
+/* Ttop navigation */
+.topnav {
+		overflow: hidden;
+		background-color: #651f78;
+		
+}
+
+/* Top navigation */
+.topnav a {
+		float: left;
+		display: block;
+		color:#651f78;
+		text-align: centre;
+		padding: 20px 25px;
+		text-decoration: none;
+		
+}
+/* Top navigation */
+.topnav a:hoover {
+	background-color : #8959a8;
+	color: white;
+	
+}
+
+/* button */
+.button {
+	  background-color: #cc93db;
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+}
+
+		
+/* Column */
+.column {
+	float: left;
+	width: 33.33%;
+	padding:70px;
+}
+
+/*Content */
+.content {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 10px;
+}
+
+/* Increase the font size of the heading */
+.header h2 {
+	font-size: 60px;
+	padding: 80px;			
+}
+
+
+				
+/* Increase the font size of the heading */
+.header h3 {
+	font-size: 60px;
+}
+							
+/* Main column */
+.main {   
+ -ms-flex: 70%; /* IE10 */
+	flex: 70%;				 
+	background-color: white;
+	padding: 20px;
+}
+
